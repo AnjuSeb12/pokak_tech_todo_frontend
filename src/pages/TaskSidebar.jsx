@@ -16,7 +16,7 @@ export default function TaskSidebar() {
     const fetchTasks = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axiosInstance.get("/tasks", {
+        const response = await axiosInstance.get("/api/tasks", {
           headers: { Authorization: `Bearer ${token}` },
         });
 

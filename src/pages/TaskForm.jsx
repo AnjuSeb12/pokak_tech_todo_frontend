@@ -25,7 +25,7 @@ export default function TaskForm() {
     e.preventDefault();
     try {
       const token = localStorage.getItem("token");
-      await axiosInstance.post("/tasks", form, {
+      await axiosInstance.post("/api/tasks", form, {
         headers: { Authorization: `Bearer ${token}` },
       });
       alert("Task created successfully!");

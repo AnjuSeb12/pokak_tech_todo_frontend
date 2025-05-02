@@ -9,7 +9,7 @@ export default function TaskDashboard() {
 
   const fetchTasks = async () => {
     try {
-      const res = await axiosInstance.get("/tasks", {
+      const res = await axiosInstance.get("/api/tasks", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -22,7 +22,7 @@ export default function TaskDashboard() {
 
   const deleteTask = async (id) => {
     try {
-      await axiosInstance.delete(`/tasks/${id}`, {
+      await axiosInstance.delete(`/api/tasks/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

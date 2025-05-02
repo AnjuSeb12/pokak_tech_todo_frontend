@@ -16,7 +16,7 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const res = await axiosInstance.post('auth/register', formData);
+      const res = await axiosInstance.post('/api/auth/register', formData);
       localStorage.setItem('token', res.data.token);
       alert('Registration successful!');
       navigate('/login');
@@ -24,7 +24,7 @@ const Register = () => {
       alert(err.response?.data?.error || 'Registration failed');
     }
   };
-  
+
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
